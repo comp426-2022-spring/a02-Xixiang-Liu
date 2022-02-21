@@ -42,7 +42,10 @@ function coinFlip() {
  */
 
 function coinFlips(flips) {
-
+  const coins = [];
+  for (let i = 0; i < flips; i++)
+    coins[i] = coinFlip();
+  return coins;
 }
 
 /** Count multiple flips
@@ -59,7 +62,15 @@ function coinFlips(flips) {
  */
 
 function countFlips(array) {
-
+  let h = 0;
+  let t = 0;
+  for( let i = 0; i < array.length; i++)
+    if(array[i] == "heads")
+      h++;
+    else
+      t++;
+  const count = '{ tails: ' + t + ', heads: ' + h + ' }' ;
+  return count;
 }
 
 /** Flip a coin!
