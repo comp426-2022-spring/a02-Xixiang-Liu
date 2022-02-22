@@ -75,17 +75,26 @@ function countFlips(array) {
 
 /** Flip a coin!
  * 
- * Write a function that accepts one input parameter: a string either "heads" or "tails", flips a coin, and then records "win" or "lose". 
+ * Write a function that accepts one input parameter: 
+ * a string either "heads" or "tails", flips a coin, and then records "win" or "lose". 
  * 
  * @param {string} call 
- * @returns {object} with keys that are the input param (heads or tails), a flip (heads or tails), and the result (win or lose). See below example.
+ * @returns {object} with keys that are the input param (heads or tails), a flip (heads or tails), 
+ * and the result (win or lose). See below example.
  * 
  * example: flipACoin('tails')
  * returns: { call: 'tails', flip: 'heads', result: 'lose' }
  */
 
 function flipACoin(call) {
-
+  let flip = coinFlip();
+  let result = "";
+  if(call == flip)
+    result = "win";
+  else
+    result = "lose";
+  let callResult = `{ call: '${call}', flip: '${f}', result: '${r}' }`;
+  return callResult;
 }
 
 
