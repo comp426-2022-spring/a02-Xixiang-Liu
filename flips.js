@@ -1,27 +1,20 @@
-/*
 import { coinFlips, countFlips } from "./modules/coin.mjs";
+import minimist from "minimist";
 
-try {
-    let number = 1; 
-    const arg = process.argv.slice(2)[0].slice(9);
-    number = arg;
-    console.log(countFlips(coinFlips(number)));
-} 
-catch (error) {
-    console.log(countFlips(coinFlips(1)));
+const args = minimist(process.argv.slice(2));
+if (args.number == null)
+    args.number = 1;
+let record = coinFlips(args.number);
+/*
+if (args.number <= 1) {
+    let data = countFlips(record);
+    if (data.heads == 1) {
+        console.log("{heads: " + data.heads + "}");
+    } else {
+        console.log("{tails: " + data.tails + "}");
+    }
+} else {
+    console.log(countFlips(record));
 }
 */
-
-import { coinFlips, countFlips } from "./modules/coin.mjs";
-
-
-try {
-    let number = 1; 
-    const arg = process.argv.slice(2)[0].slice(9);
-    if( number != null){
-        number = arg;
-        console.log(countFlips(coinFlips(number)));
-    }
-} catch (error) {
-    console.log(countFlips(coinFlips(1)));
-}
+console.log(countFlips(record));
